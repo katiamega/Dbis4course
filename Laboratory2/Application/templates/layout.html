@@ -1,31 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>DBBuilder CRUD</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-    <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+
+    <title>KateProj</title>
 </head>
+
 <body>
-    <div id="header">
-        <div class="container d-flex justify-content-between align-items-center">
-            <span id="header__logo">DBBuider CRUD</span>
-            <div id="header__navigation" class="d-flex">
-                <a href="{{ url_for('client')}}">Client</a>
-                <a href="{{ url_for('products')}}">Products</a>
-                <a href="{{ url_for('shops')}}">Shops</a>
-                <a href="{{ url_for('dashboard')}}">Dashboards</a>
+    <nav>
+        <div class="nav-wrapper black">
+            <a href="#" class="brand-logo">LAB2</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="lab2.html">Главная</a></li>
+                <li><a href="Dashboard.html">График</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="row">
+                <form class="col s12">
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="text" class="validate">
+                            <label for="password">Колір</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="text" class="validate">
+                            <label for="email">Виробник</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email1" type="text" class="validate">
+                            <label for="email1">Нагода</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <form action="#">
+                                <p class="range-field">
+                                    <input type="range" id="test5" min="0" max="99999"  />
+                                    <label for="test5" id="moneyVal">Бюджет:</label>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="switch">
+                            <label>
+                                Упаковать
+                                <input type="checkbox">
+                                <span class="lever"></span>
+
+                            </label>
+                        </div>
+                    </div>
+
+
+                    <a href="#!" class="btn right">Показать</a>
+                </form>
             </div>
         </div>
-    </div>
-    <div id="content">
-        <div class="container d-flex flex-column" id="content__page">
-            {% block content %}{% endblock %}
-        </div>
+
+
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.datepicker').datepicker();
+    });
+    $('#test5').on('input',function(){
+        $('#moneyVal').text("Бюджет: "+$('#test5').val());
+    })
+</script>
+
 </html>
