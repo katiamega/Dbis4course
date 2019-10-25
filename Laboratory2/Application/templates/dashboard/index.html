@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <title>KateProj</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Мегедюк Катерина</a>  <!-- Посилання на репозиторій з кодом !-->
+    </div>
+    <ul class="navbar-nav">
+
+        <li class="nav-item "><a class="nav-link" href="lab2.html">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="Board.html">График</a></li>
+        
+    </ul>
+
+</nav>
+<canvas id="myChart" width="500px" height="500px"></canvas>
+<canvas id="myChart2" width="500px" height="500px"></canvas>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+            labels: ['0', '100', '1000', '1000', '10000'],
+            datasets: [{
+                label: 'Количество товаров',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10,12, 20, 25]
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+            responsive: false,
+            scales: {
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Количество товаров'
+                    }
+                }]
+                ,
+                xAxes:[{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'ГРН'
+                    }
+
+                }]
+            }
+        }
+    });
+    var ctx2 = document.getElementById('myChart2').getContext('2d');
+    var myChart2 = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Beauty', 'House', 'Clothes']
+            datasets: [{
+
+                data: [500, 999, 995, 160, 900],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: false,
+            scales: {
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Количество товаров'
+                    }
+                }]
+
+            }
+        }
+    });
+</script>
+</body>
+</html>
