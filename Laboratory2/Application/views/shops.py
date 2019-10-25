@@ -6,7 +6,7 @@ from domain.layout import data_types
 
 
 class ShopsViewModel(FlaskForm):
-    shops_name = StringField("shops_name", [validators.DataRequired("Attribute name is required")])
+    shops_name = StringField("shops_name", [validators.DataRequired("Attribute name necessary")])
     shops_locale = DateTimeField("shops_locale")
     shops_contact = DateTimeField("shops_contact")
     Products = SelectField("Products", validators=[validators.DataRequired()])
