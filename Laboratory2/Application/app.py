@@ -12,7 +12,7 @@ import os
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY")
 
-app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL", f"postgresql://{username}:{password}@{host}:{port}/{database}")
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL", f"postgresql://{clientname}:{pass}@{host}:{port}/{database}")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db.init_app(app)
