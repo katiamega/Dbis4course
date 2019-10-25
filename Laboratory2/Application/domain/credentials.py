@@ -1,0 +1,5 @@
+clientname = "Katia"
+pass = "Katia19"
+host = "127.0.0.1"
+port = "1999"
+database = "dbbuilder"
